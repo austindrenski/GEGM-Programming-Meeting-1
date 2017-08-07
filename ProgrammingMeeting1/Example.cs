@@ -33,11 +33,22 @@ namespace ProgrammingMeeting1
         /// <returns>
         /// True if the Value property is positive; otherwise false.
         /// </returns>
-        public bool IncreaseValue(int amount)
+        public virtual bool IncreaseValue(int amount)
         {
             Value += amount;
 
             return Value > 0;
+        }
+
+        /// <summary>
+        /// Returns a string that represents the current object.
+        /// </summary>
+        /// <returns>
+        /// A string that represents the current object.
+        /// </returns>
+        public override string ToString()
+        {
+            return $"The value of this example is {Value}";
         }
     }
 }

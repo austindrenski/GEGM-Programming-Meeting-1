@@ -1,7 +1,15 @@
-﻿// Learn more about F# at http://fsharp.org
-// See the 'F# Tutorial' project for more help.
+﻿module ProgrammingMeeting1
+
+open Example
+open ExtendedExample
 
 [<EntryPoint>]
 let main argv = 
-    printfn "%A" argv
+    
+    let example = new Example(10)
+
+    let extended = new ExtendedExample(10)
+
+    
+
     0 // return an integer exit code
