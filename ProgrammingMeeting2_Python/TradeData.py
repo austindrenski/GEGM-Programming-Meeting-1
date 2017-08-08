@@ -2,26 +2,17 @@
 #
 # This module provides basic data management logic for reading a delimited file into a list of class objects. 
 #
-# pylint: disable=C0103, C0301
 
-import csv
-import os
 import StaticBaseClass
 from StaticBaseClass import StaticBaseClass
 
-def read_delimited_file(filePath, constructorLambda, delimiter=",", headerRow=True):
-    """Reads a delimited file and constructs objects based on the provided lambda function."""
-    with open(filePath, newline=os.linesep) as reader:
-        csvReader = csv.reader(reader, delimiter=delimiter, quotechar="\"")
-        if headerRow:
-            next(csvReader)
-        return list(map(constructorLambda, [[y.strip() for y in x] for x in csvReader]))
-
-class Observation(StaticBaseClass):
-    """Represents an observation of data."""
+class TradeData(StaticBaseClass):
+    """Represents an observation of trade data."""
+    # Defines the properties for this class.
+    __slots__ = ["source", "destination", "sector", "year", "value"]
     
     def __init__(self, source, destination, sector, year, value):
-        """Constructs an Observation with the given inputs."""
+        """Constructs an observation of trade data with the given inputs."""
         if source is None:
             raise ValueError("Argument null: source.")
         if destination is None:
@@ -40,15 +31,15 @@ class Observation(StaticBaseClass):
         StaticBaseClass.__init__(self)
 
     def __str__(self):
-        """Returns a string representation of this Observation."""
+        """Returns a string representation of this observation."""
         return "(%s, %s, %s, %s, %.2f)" % (self.source, self.destination, self.sector, self.year, self.value)
 
     def __repr__(self):
-        """Returns a the Python expression that created this Observation."""
+        """Returns a the Python expression that created this observation."""
         return "Observation%s" % self.__str__()
 
     def __eq__(self, other):
-        """Defines equality with another Observation"""
+        """Defines equality with another observation"""
         return isinstance(other, Observation) and \
                self.source == other.source and \
                self.destination == other.destination and \
@@ -57,9 +48,9 @@ class Observation(StaticBaseClass):
                self.value == other.value
 
     def __ne__(self, other):
-        """Defines inequality with another Observation"""
+        """Defines inequality with another observation"""
         return not self.__eq__(other)
 
     def __copy__(self):
-        """Creates a copy of this Observation"""
+        """Creates a copy of this observation"""
         return Observation(self.source, self.destination, self.sector, self.year, self.value)

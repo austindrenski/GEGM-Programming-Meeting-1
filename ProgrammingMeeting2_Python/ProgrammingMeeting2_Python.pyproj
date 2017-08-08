@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>6d25e092-b048-4d34-a93b-6068c9ddf1e7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ProgrammingMeeting2_Python.py</StartupFile>
+    <StartupFile>Example.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,18 +22,20 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AD_IO.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="StaticBaseClass.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Observation.py" />
-    <Compile Include="ObservationExamples.py" />
-    <Compile Include="ProgrammingMeeting2_Python.py" />
+    <Compile Include="TradeData.py" />
+    <Compile Include="Example.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda36-64" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Observation.txt" />
+    <Content Include="ExampleTradeData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
