@@ -6,6 +6,8 @@
 
 import csv
 import os
+import StaticBaseClass
+from StaticBaseClass import StaticBaseClass
 
 def read_delimited_file(filePath, constructorLambda, delimiter=",", headerRow=True):
     """Reads a delimited file and constructs objects based on the provided lambda function."""
@@ -15,9 +17,9 @@ def read_delimited_file(filePath, constructorLambda, delimiter=",", headerRow=Tr
             next(csvReader)
         return list(map(constructorLambda, [[y.strip() for y in x] for x in csvReader]))
 
-class Observation(object):
+class Observation(StaticBaseClass):
     """Represents an observation of data."""
-
+    
     def __init__(self, source, destination, sector, year, value):
         """Constructs an Observation with the given inputs."""
         if source is None:
@@ -35,6 +37,7 @@ class Observation(object):
         self.sector = sector
         self.year = year
         self.value = value
+        StaticBaseClass.__init__(self)
 
     def __str__(self):
         """Returns a string representation of this Observation."""
@@ -43,16 +46,6 @@ class Observation(object):
     def __repr__(self):
         """Returns a the Python expression that created this Observation."""
         return "Observation%s" % self.__str__()
-
-    def __hash__(self):
-        """Calculates a hash code for this Observation."""
-        hashValue = 17
-        hashValue = 23 * hashValue + hash(self.source)
-        hashValue = 23 * hashValue + hash(self.destination)
-        hashValue = 23 * hashValue + hash(self.sector)
-        hashValue = 23 * hashValue + hash(self.year)
-        hashValue = 23 * hashValue + hash(self.value)
-        return hashValue
 
     def __eq__(self, other):
         """Defines equality with another Observation"""

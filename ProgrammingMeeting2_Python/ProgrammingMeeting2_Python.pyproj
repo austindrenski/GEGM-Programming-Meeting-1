@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="StaticBaseClass.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Observation.py" />
     <Compile Include="ObservationExamples.py" />
     <Compile Include="ProgrammingMeeting2_Python.py" />
