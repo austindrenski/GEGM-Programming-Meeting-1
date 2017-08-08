@@ -9,6 +9,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ProgrammingMeeting1_FSharp"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ProgrammingMeeting1_Python", "ProgrammingMeeting1_Python\ProgrammingMeeting1_Python.pyproj", "{E608C3C9-0E91-4CB4-86C9-0760708E10C7}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ProgrammingMeeting2_Python", "ProgrammingMeeting2_Python\ProgrammingMeeting2_Python.pyproj", "{6D25E092-B048-4D34-A93B-6068C9DDF1E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,8 @@ Global
 		{1E99BF0C-B537-4D57-BCAF-14642C5BC295}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E608C3C9-0E91-4CB4-86C9-0760708E10C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E608C3C9-0E91-4CB4-86C9-0760708E10C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D25E092-B048-4D34-A93B-6068C9DDF1E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D25E092-B048-4D34-A93B-6068C9DDF1E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
